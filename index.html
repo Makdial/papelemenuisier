@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pape the Carpenter — Master Carpenter</title>
+  <meta name="description" content="Handcrafted wooden furniture and creations by Pape the Carpenter. Wolof, French and English." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Particle background canvas -->
+  <canvas id="particles"></canvas>
+
+  <!-- Neon cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">
+        <span class="brand-mark">PC</span>
+        <span class="brand-text" data-i18n="brand">Pape the Carpenter</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#home" data-i18n="nav_home">Home</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#gallery" data-i18n="nav_gallery">Creations</a>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="lang-switch" id="langSwitch">
+        <button data-lang="en" class="active" aria-label="English">EN</button>
+        <button data-lang="fr" aria-label="Français">FR</button>
+        <button data-lang="wo" aria-label="Wolof">WO</button>
+      </div>
+
+      <button class="btn btn-sm admin-btn" id="adminBtn" title="Admin area">🔐 <span id="adminBtnLabel">Admin</span></button>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Handcrafted with soul since 1998</p>
+          <h1 class="neon-title">
+            <span data-i18n="hero_title_1">Crafting Wood</span>
+            <span class="neon-accent" data-i18n="hero_title_2">Into Living Art</span>
+          </h1>
+          <p class="hero-lead" data-i18n="hero_lead">
+            Bespoke furniture, doors, beds and everyday objects carved with passion, precision and the warmth of true Senegalese craftsmanship.
+          </p>
+          <div class="hero-cta">
+            <a href="#gallery" class="btn btn-primary" data-i18n="cta_gallery">View Creations</a>
+            <a href="#contact" class="btn btn-ghost" data-i18n="cta_contact">Get a Quote</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong>25+</strong><span data-i18n="stat_years">Years of craft</span></div>
+            <div class="stat"><strong>800+</strong><span data-i18n="stat_pieces">Pieces made</span></div>
+            <div class="stat"><strong>100%</strong><span data-i18n="stat_custom">Custom made</span></div>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="wood-orb">
+            <div class="orb-ring ring-1"></div>
+            <div class="orb-ring ring-2"></div>
+            <div class="orb-ring ring-3"></div>
+            <div class="orb-core">
+              <svg viewBox="0 0 200 200" class="carpenter-svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="woodGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ffb347"/>
+                    <stop offset="100%" stop-color="#8b4513"/>
+                  </linearGradient>
+                  <filter id="neon">
+                    <feGaussianBlur stdDeviation="3" result="b"/>
+                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+                <circle cx="100" cy="100" r="88" fill="none" stroke="url(#woodGrad)" stroke-width="2" filter="url(#neon)"/>
+                <path d="M60 140 L100 60 L140 140 Z" fill="none" stroke="#00f5ff" stroke-width="2" filter="url(#neon)"/>
+                <circle cx="100" cy="95" r="14" fill="#00f5ff" filter="url(#neon)"/>
+                <path d="M80 150 Q100 165 120 150" fill="none" stroke="#ffaa00" stroke-width="2.5" stroke-linecap="round" filter="url(#neon)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="floating-chips">
+            <span class="chip">Oak</span>
+            <span class="chip">Teak</span>
+            <span class="chip">Mahogany</span>
+            <span class="chip">Baobab</span>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="about_eyebrow">The Craftsman</p>
+          <h2 class="section-title neon-underline" data-i18n="about_title">A Lifetime Shaping Wood</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card glass reveal">
+            <div class="about-icon">🔨</div>
+            <h3 data-i18n="about_c1_title">Master Craftsmanship</h3>
+            <p data-i18n="about_c1_body">Over two decades of hands-on experience turning raw timber into pieces that outlive generations. Every joint, every curve, every finish is done by hand.</p>
+          </div>
+          <div class="about-card glass reveal">
+            <div class="about-icon">🌳</div>
+            <h3 data-i18n="about_c2_title">Local & Noble Woods</h3>
+            <p data-i18n="about_c2_body">Mahogany, teak, oak and African baobab — carefully selected, seasoned and treated so your furniture breathes with the climate.</p>
+          </div>
+          <div class="about-card glass reveal">
+            <div class="about-icon">✨</div>
+            <h3 data-i18n="about_c3_title">Made For You</h3>
+            <p data-i18n="about_c3_body">No two homes are alike, so no two pieces are either. Tell me your space, your taste, your budget — I build around you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY / PRODUCTS -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="gallery_eyebrow">The Workshop</p>
+          <h2 class="section-title neon-underline" data-i18n="gallery_title">Latest Creations</h2>
+          <p class="section-lead" data-i18n="gallery_lead">Fresh from the bench. New pieces are added as they are born.</p>
+        </div>
+
+        <div class="gallery-toolbar reveal">
+          <button class="btn btn-primary btn-sm admin-only" id="openUpload">
+            <span>＋</span> <span data-i18n="btn_add">Add New Creation</span>
+          </button>
+          <div class="filter-chips" id="filterChips">
+            <button class="chip-btn active" data-filter="all" data-i18n="filter_all">All</button>
+            <button class="chip-btn" data-filter="furniture" data-i18n="filter_furniture">Furniture</button>
+            <button class="chip-btn" data-filter="doors" data-i18n="filter_doors">Doors</button>
+            <button class="chip-btn" data-filter="decor" data-i18n="filter_decor">Decor</button>
+          </div>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">🪵</div>
+          <p data-i18n="empty_title">No creations yet</p>
+          <small data-i18n="empty_sub">Tap “Add New Creation” to upload your first piece.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="services_eyebrow">What I Build</p>
+          <h2 class="section-title neon-underline" data-i18n="services_title">Services</h2>
+        </div>
+        <div class="services-list">
+          <article class="service-row glass reveal">
+            <div class="service-num">01</div>
+            <div class="service-body">
+              <h3 data-i18n="svc1_title">Custom Furniture</h3>
+              <p data-i18n="svc1_body">Beds, wardrobes, tables, chairs and shelves tailored to your measurements.</p>
+            </div>
+            <div class="service-price" data-i18n="svc_price_quote">On quote</div>
+          </article>
+          <article class="service-row glass reveal">
+            <div class="service-num">02</div>
+            <div class="service-body">
+              <h3 data-i18n="svc2_title">Doors & Windows</h3>
+              <p data-i18n="svc2_body">Solid wood doors, window frames and shutters built to last decades.</p>
+            </div>
+            <div class="service-price" data-i18n="svc_price_quote">On quote</div>
+          </article>
+          <article class="service-row glass reveal">
+            <div class="service-num">03</div>
+            <div class="service-body">
+              <h3 data-i18n="svc3_title">Repair & Restoration</h3>
+              <p data-i18n="svc3_body">Bringing old, tired pieces back to life with care and authenticity.</p>
+            </div>
+            <div class="service-price" data-i18n="svc_price_quote">On quote</div>
+          </article>
+          <article class="service-row glass reveal">
+            <div class="service-num">04</div>
+            <div class="service-body">
+              <h3 data-i18n="svc4_title">Decor & Carving</h3>
+              <p data-i18n="svc4_body">Carved panels, wall art, frames and decorative objects with African motifs.</p>
+            </div>
+            <div class="service-price" data-i18n="svc_price_quote">On quote</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow" data-i18n="contact_eyebrow">Let's Build Together</p>
+            <h2 class="section-title neon-underline" data-i18n="contact_title">Get In Touch</h2>
+            <p data-i18n="contact_lead">Tell me about your project. I reply personally, usually within a day.</p>
+            <ul class="contact-info">
+              <li><span class="ci-icon">📞</span> <a href="tel:+221772037032">+221 77 203 70 32</a> <a class="wa-link" href="https://wa.me/221772037032" target="_blank" rel="noopener" title="WhatsApp">💬</a></li>
+              <li><span class="ci-icon">✉️</span> <a href="mailto:papelemenuisier@gmail.com">papelemenuisier@gmail.com</a></li>
+              <li><span class="ci-icon">📍</span> <a href="https://www.google.com/maps/dir/?api=1&destination=Colobane+rue+40x43+Dakar+Senegal" target="_blank" rel="noopener"><span data-i18n="contact_address">Colobane rue 40x43 Dakar Senegal</span></a></li>
+              <li><span class="ci-icon">🕐</span> <span data-i18n="contact_hours">Mon–Sun, 8am – 7pm</span></li>
+            </ul>
+          </div>
+          <form class="contact-form glass reveal" id="contactForm">
+            <div class="field">
+              <label data-i18n="form_name">Your name</label>
+              <input type="text" id="formName" required />
+            </div>
+            <div class="field">
+              <label data-i18n="form_phone">Phone / WhatsApp</label>
+              <input type="tel" id="formPhone" required />
+            </div>
+            <div class="field">
+              <label data-i18n="form_msg">Your project</label>
+              <textarea rows="4" id="formMsg" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" data-i18n="form_send">Send Message</button>
+            <p class="form-status" id="formStatus"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="brand">
+        <span class="brand-mark">PC</span>
+        <span class="brand-text" data-i18n="brand">Pape the Carpenter</span>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Atelier Souley — Handcrafted with love in Dakar.</p>
+      <div class="footer-links">
+        <a href="#home">↑ <span data-i18n="footer_top">Back to top</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Upload modal -->
+  <div class="modal" id="uploadModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card glass">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <h3 class="modal-title" data-i18n="modal_title">Add a New Creation</h3>
+      <p class="modal-sub" data-i18n="modal_sub">Upload a photo of the piece you just finished.</p>
+      <form id="uploadForm">
+        <div class="field">
+          <label data-i18n="upl_name">Name of piece</label>
+          <input type="text" id="uplName" required placeholder="e.g. Coffee table in teak" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label data-i18n="upl_cat">Category</label>
+            <select id="uplCat">
+              <option value="furniture" data-i18n="filter_furniture">Furniture</option>
+              <option value="doors" data-i18n="filter_doors">Doors</option>
+              <option value="decor" data-i18n="filter_decor">Decor</option>
+            </select>
+          </div>
+          <div class="field">
+            <label data-i18n="upl_price">Price (optional)</label>
+            <input type="text" id="uplPrice" placeholder="e.g. 85 000 FCFA" />
+          </div>
+        </div>
+        <div class="field">
+          <label data-i18n="upl_desc">Description</label>
+          <textarea id="uplDesc" rows="3" placeholder="Wood, dimensions, finish..."></textarea>
+        </div>
+        <div class="field">
+          <label data-i18n="upl_photo">Photo</label>
+          <div class="upload-drop" id="uploadDrop">
+            <input type="file" id="uplFile" accept="image/*" hidden />
+            <div class="drop-inner" id="dropInner">
+              <div class="drop-icon">📷</div>
+              <p data-i18n="upl_drop">Click or drag a photo here</p>
+              <small>PNG, JPG, WEBP — max 2 MB</small>
+            </div>
+            <img id="previewImg" class="preview-img" alt="preview" hidden />
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="modalCancel" data-i18n="btn_cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary" data-i18n="btn_save">Save Creation</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin login modal -->
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal-backdrop" id="loginBackdrop"></div>
+    <div class="modal-card glass" style="max-width:400px">
+      <button class="modal-close" id="loginClose" aria-label="Close">✕</button>
+      <h3 class="modal-title">Admin Access</h3>
+      <p class="modal-sub">Enter password to upload and manage creations.</p>
+      <form id="loginForm">
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="loginPass" required autofocus />
+        </div>
+        <p class="form-status" id="loginStatus" style="opacity:1;color:#ff5d6c"></p>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="loginCancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Unlock</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Product detail / zoom modal -->
+  <div class="modal" id="detailModal" aria-hidden="true">
+    <div class="modal-backdrop" id="detailBackdrop"></div>
+    <div class="detail-card glass">
+      <button class="modal-close" id="detailClose" aria-label="Close">✕</button>
+      <div class="detail-media">
+        <div class="zoom-viewport" id="zoomViewport">
+          <img id="detailImg" src="" alt="" />
+        </div>
+        <div class="zoom-controls">
+          <button id="zoomOut" title="Zoom out">−</button>
+          <span id="zoomLevel">100%</span>
+          <button id="zoomIn" title="Zoom in">+</button>
+          <button id="zoomReset" title="Reset">Reset</button>
+        </div>
+      </div>
+      <div class="detail-info">
+        <h3 id="detailName"></h3>
+        <div class="pc-price" id="detailPrice"></div>
+        <p id="detailDesc"></p>
+        <div class="detail-meta">
+          <span class="pc-cat" id="detailCat"></span>
+          <span id="detailDate"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="i18n.js"></script>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
